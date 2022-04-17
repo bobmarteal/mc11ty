@@ -1,0 +1,13 @@
+/* 
+    Name: _base
+    Descr: body and html styles
+*/
+body {
+  // background: var(--light-gray);
+}
+html {
+  font-family: var(--mainFont);
+  font-size: var(--baseFontSize);
+  font-weight: var(--fontMedium);
+  line-height: var(--baseLineHeight);
+}

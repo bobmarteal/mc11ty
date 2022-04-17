@@ -1,0 +1,10 @@
+// @import "vars_mixins/*.scss";
+// need to figure out why clumping not working
+
+@import "vars_mixins/_00-text-color";
+@import "vars_mixins/_02-color-var-mix";
+@import "vars_mixins/_03-text-var-mix";
+
+@import "base/_base";
+
+//probably scrap most of here down

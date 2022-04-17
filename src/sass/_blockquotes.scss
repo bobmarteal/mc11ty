@@ -1,0 +1,17 @@
+/* 
+    Name: _blockquote
+    Descr: Styles the blockquotes
+*/
+
+blockquote {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  border-left: 4px solid var(--blue);
+  padding-left: 1em;
+  @include sm() {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 2rem;
+  }
+}

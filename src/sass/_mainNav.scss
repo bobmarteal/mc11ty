@@ -1,0 +1,14 @@
+/* 
+    Name: _mainNav
+    Descr: Styles responsive and full version of main navigaiton
+*/
+.mainNav {
+  a {
+    text-transform: uppercase;
+    font-weight: var(--medium-weight);
+    font-size: 0.8rem;
+    color: var(--black);
+    margin: 0 0.5rem;
+    text-decoration-color: var(--light-gray);
+  }
+}
