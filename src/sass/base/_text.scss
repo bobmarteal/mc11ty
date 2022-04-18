@@ -2,6 +2,12 @@
     Name: _text
     Descr: Base text styles, main body links, special text things that are not headers
 */
-a{
-    color: var(--green);
+
+p {
+  margin: 0;
+  margin-top: 1em;
+}
+
+a {
+  color: var(--textMain);
 }

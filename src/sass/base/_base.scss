@@ -3,11 +3,27 @@
     Descr: body and html styles
 */
 body {
-  // background: var(--light-gray);
+  background: var(--bodyBackground);
+  background: var(--containerBackground);
+  padding: 0;
+  margin: 0;
 }
 html {
   font-family: var(--mainFont);
   font-size: var(--baseFontSize);
   font-weight: var(--fontMedium);
   line-height: var(--baseLineHeight);
+  color: var(--textMain);
+}
+
+// .container {
+//   max-width: var(--xl);
+//   padding: 1rem;
+// }
+
+.wrapper {
+  max-width: var(--xl);
+  padding: 4rem;
+  margin: 0 auto;
+  background: var(--containerBackground);
 }

@@ -13,6 +13,7 @@
   },
   {
     "name": "Contact",
-    "link": "/contact"
+    "link": "/contact",
+    "class": "button button--cta"
   }
 ]

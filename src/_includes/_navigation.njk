@@ -1,6 +1,6 @@
             <nav class="mainNav">
                 {% for item in navigation %}
-                    <a href="{{ item.link }}">
+                    <a href="{{ item.link }}" class="{{ item.class }}">
                     {{ item.name }}
                 </a>
                 {% endfor %}

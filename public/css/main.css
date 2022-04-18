@@ -13,17 +13,180 @@
   --fontExtraBold: 800;
 }
 
+:root {
+  --xsmall: 320px;
+  --small: 480px;
+  --medium: 782px;
+  --header: 900px;
+  --large: 1224px;
+  --xl: 1432px;
+  --xxl: 1640;
+}
+
 /*
   -solid colors
   -gradients
 */
+/*
+  -various itesm
+*/
+:root {
+  --borderRadius: 8px;
+}
+
 /* 
     Name: _base
     Descr: body and html styles
 */
+body {
+  background: var(--bodyBackground);
+  background: var(--containerBackground);
+  padding: 0;
+  margin: 0;
+}
+
 html {
   font-family: var(--mainFont);
   font-size: var(--baseFontSize);
   font-weight: var(--fontMedium);
   line-height: var(--baseLineHeight);
+  color: var(--textMain);
+}
+
+.wrapper {
+  max-width: var(--xl);
+  padding: 4rem;
+  margin: 0 auto;
+  background: var(--containerBackground);
+}
+
+/* 
+    Name: _images
+    Descr: Style all images
+    -pano
+    -inline
+    -shows
+*/
+img {
+  max-width: 100%;
+  border-radius: var(--borderRadius);
+}
+img.plain {
+  box-shadow: none;
+}
+img.right {
+  margin-left: 1rem;
+  max-width: 60%;
+}
+
+figure {
+  border-bottom: 4px solid var(--green);
+  padding-bottom: 0.5rem;
+  margin-top: 0.25rem;
+}
+figure figcaption {
+  font-size: 0.75rem;
+}
+@media only screen and (min-width: 480px) {
+  figure.right {
+    margin-left: 1.5rem;
+    margin-right: 0;
+  }
+}
+@media only screen and (min-width: 480px) {
+  figure.left {
+    margin-right: 1.5rem;
+    margin-left: 0;
+  }
+}
+
+/* 
+    Name: _text
+    Descr: Base text styles, main body links, special text things that are not headers
+*/
+p {
+  margin: 0;
+  margin-top: 1em;
+}
+
+a {
+  color: var(--textMain);
+}
+
+/* 
+    Name: _header
+    Descr: Styles the main page header
+*/
+.pageHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.logo {
+  display: grid;
+  grid-template-columns: 125px 1fr;
+  align-items: center;
+}
+.logo a {
+  margin-left: 1.25rem;
+  font-size: 1.75rem;
+  font-weight: var(--fontExtraBold);
+  text-decoration: none;
+}
+.logo a span {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--fontMedium);
+  margin-top: -0.25rem;
+}
+
+/* 
+    Name: _hero
+    Descr: Style for the hero image and header
+*/
+.hero {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  margin-top: 4rem;
+  align-items: center;
+}
+.hero h1 {
+  font-size: 3rem;
+  font-weight: var(--fontExtraBold);
+  line-height: 1em;
+}
+
+/* 
+    Name: _mainNav
+    Descr: Styles responsive and full version of main navigaiton
+*/
+.mainNav {
+  display: flex;
+  justify-content: flex-end;
+}
+.mainNav a {
+  display: inline-block;
+  padding: 0.5em;
+}
+.mainNav a.button {
+  margin-left: 0.5em;
+}
+
+/* 
+    Name: _buttons
+    Descr: Basic styles for buttons
+*/
+.button {
+  border-radius: var(--borderRadius);
+  padding: 0.5em 1em;
+  font-weight: var(--fontSemi);
+  display: inline-block;
+}
+.button--cta {
+  background: var(--brandOne);
+}
+.button--primary {
+  background: var(--brandTwo);
+  margin-top: 1em;
 }

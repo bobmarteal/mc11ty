@@ -8,8 +8,8 @@
 
 img {
   max-width: 100%;
-  border-radius: var(--border-radius);
-  @include boxShadow();
+  border-radius: var(--borderRadius);
+  // @include boxShadow();
   &.plain {
     box-shadow: none;
   }
@@ -27,13 +27,13 @@ figure {
     font-size: 0.75rem;
   }
   &.right {
-    @include sm() {
+    @include mq(small) {
       margin-left: 1.5rem;
       margin-right: 0;
     }
   }
   &.left {
-    @include sm() {
+    @include mq(small) {
       margin-right: 1.5rem;
       margin-left: 0;
     }
