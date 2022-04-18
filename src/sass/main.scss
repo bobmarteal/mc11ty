@@ -13,8 +13,14 @@
 @import "page/_header";
 @import "page/_footer";
 
+@import "components/_hero";
+@import "components/_mainNav";
+@import "components/_block";
+@import "components/_columns";
+@import "components/_lists";
+
 //probably scrap most of here down
 
-@import "hero";
-@import "mainNav";
+// @import "hero";
+// @import "mainNav";
 @import "buttons";

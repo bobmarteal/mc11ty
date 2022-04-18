@@ -1,0 +1,33 @@
+/* 
+    Name: _block
+    Descr: Style the inpage block sections
+*/
+
+.block {
+  margin-top: 6rem;
+  &__title {
+    font-weight: var(--fontExtraBold);
+    font-size: 4rem;
+    margin: 0;
+  }
+  .block__title + div {
+    margin-top: 2rem;
+  }
+}
+
+// circle blocks
+.block--circly {
+  position: relative;
+  z-index: 2;
+  &::before {
+    position: absolute;
+    content: "";
+    background-color: var(--brandOne);
+    width: 800px;
+    height: 800px;
+    top: 5rem;
+    right: calc(-1 * (50% + -3rem));
+    border-radius: 50%;
+    z-index: -1;
+  }
+}

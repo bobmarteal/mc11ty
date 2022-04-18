@@ -11,3 +11,26 @@ p {
 a {
   color: var(--textMain);
 }
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: var(--fontBold);
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    background-color: var(--brandOne);
+    height: 0.25rem;
+    width: 100px;
+    left: 0;
+    bottom: 0;
+    border-radius: var(--borderRadius);
+  }
+}

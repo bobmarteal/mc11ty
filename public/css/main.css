@@ -128,6 +128,29 @@ a {
   color: var(--textMain);
 }
 
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: var(--fontBold);
+  position: relative;
+}
+h3::after {
+  position: absolute;
+  content: "";
+  background-color: var(--brandOne);
+  height: 0.25rem;
+  width: 100px;
+  left: 0;
+  bottom: 0;
+  border-radius: var(--borderRadius);
+}
+
 /* 
     Name: _header
     Descr: Styles the main page header
@@ -248,12 +271,85 @@ footer ul li {
 }
 
 /* 
+    Name: _block
+    Descr: Style the inpage block sections
+*/
+.block {
+  margin-top: 6rem;
+}
+.block__title {
+  font-weight: var(--fontExtraBold);
+  font-size: 4rem;
+  margin: 0;
+}
+.block .block__title + div {
+  margin-top: 2rem;
+}
+
+.block--circly {
+  position: relative;
+  z-index: 2;
+}
+.block--circly::before {
+  position: absolute;
+  content: "";
+  background-color: var(--brandOne);
+  width: 800px;
+  height: 800px;
+  top: 5rem;
+  right: calc(-1 * (50% - 3rem));
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* 
+    Name: _columns
+    Descr: filling out simple column layouts
+*/
+.columns {
+  display: grid;
+  gap: 4rem;
+}
+
+.columns--two {
+  position: relative;
+}
+@media only screen and (min-width: 900px) {
+  .columns--two {
+    grid-template-columns: 1fr 1fr;
+  }
+  .columns--two::before {
+    content: "";
+    position: absolute;
+    background: var(--brandTwo);
+    width: 1px;
+    height: 100%;
+    left: calc(50% - 1px);
+  }
+}
+
+@media only screen and (min-width: 782px) {
+  .columns--two-one {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* 
+    Name: _lists
+    Descr: basic list styles
+*/
+ul {
+  list-style-type: circle;
+}
+
+/* 
     Name: _buttons
     Descr: Basic styles for buttons
 */
 .button {
   border-radius: var(--borderRadius);
   padding: 0.5em 1em;
+  font-size: 1rem;
   display: inline-block;
 }
 @media only screen and (min-width: 782px) {

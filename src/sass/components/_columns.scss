@@ -1,0 +1,29 @@
+/* 
+    Name: _columns
+    Descr: filling out simple column layouts
+*/
+
+.columns {
+  display: grid;
+  gap: 4rem;
+}
+.columns--two {
+  position: relative;
+  @include mq(header) {
+    &::before {
+      content: "";
+      position: absolute;
+      background: var(--brandTwo);
+      width: 1px;
+      height: 100%;
+      left: calc(50% - 1px);
+    }
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.columns--two-one {
+  @include mq(medium) {
+    grid-template-columns: 2fr 1fr;
+  }
+}
