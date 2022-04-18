@@ -6,7 +6,10 @@
 .button {
   border-radius: var(--borderRadius);
   padding: 0.5em 1em;
-  font-weight: var(--fontSemi);
+  @include mq(medium) {
+    font-weight: var(--fontSemi);
+  }
+
   display: inline-block;
   // background: radial-gradient(var(--teal), var(--smoke));
   // border: 2px solid var(--blue);

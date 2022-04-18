@@ -5,13 +5,20 @@
 
 .hero {
   display: grid;
-  grid-template-columns: 6fr 4fr;
+  @include mq(medium) {
+    grid-template-columns: 6fr 4fr;
+  }
+
   margin-top: 4rem;
+  gap: 2rem;
   align-items: center;
   h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: var(--fontExtraBold);
     line-height: 1em;
+    @include mq(large) {
+      font-size: 3rem;
+    }
   }
   // @include lg {
   //   width: 120%;

@@ -23,7 +23,14 @@ html {
 
 .wrapper {
   max-width: var(--xl);
-  padding: 4rem;
+  padding: 1rem;
+  @include mq(medium) {
+    padding: 4rem 2rem;
+  }
+  @include mq(large) {
+    padding: 4rem;
+  }
+
   margin: 0 auto;
   background: var(--containerBackground);
 }

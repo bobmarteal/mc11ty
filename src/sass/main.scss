@@ -1,8 +1,7 @@
 // @import "vars_mixins/*.scss";
 // need to figure out why clumping not working
-
-@import "vars_mixins/_00-text-color";
-@import "vars_mixins/01-breakpoint-widths-var-mix";
+@import "vars_mixins/_00-breakpoint-widths-var-mix";
+@import "vars_mixins/_01-text-color";
 @import "vars_mixins/_02-color-var-mix";
 @import "vars_mixins/_03-text-var-mix";
 @import "vars_mixins/_04-extras";
@@ -11,9 +10,11 @@
 @import "base/_images";
 @import "base/_text";
 
+@import "page/_header";
+@import "page/_footer";
+
 //probably scrap most of here down
 
-@import "header";
 @import "hero";
 @import "mainNav";
 @import "buttons";

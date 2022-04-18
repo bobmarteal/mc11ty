@@ -1,19 +1,4 @@
 :root {
-  --bodyBackground: #e5e5e5;
-  --containerBackground: #192234;
-  --brandOne: #df4b2e;
-  --brandTwo: #4ba3ce;
-  --textMain: #fff;
-  --mainFont: "Raleway", sans-serif;
-  --baseFontSize: 24px;
-  --baseLineHeight: 1.5;
-  --fontMedium: 500;
-  --fontSemi: 600;
-  --fontBold: 700;
-  --fontExtraBold: 800;
-}
-
-:root {
   --xsmall: 320px;
   --small: 480px;
   --medium: 782px;
@@ -21,6 +6,26 @@
   --large: 1224px;
   --xl: 1432px;
   --xxl: 1640;
+}
+
+:root {
+  --bodyBackground: #e5e5e5;
+  --containerBackground: #192234;
+  --brandOne: #df4b2e;
+  --brandTwo: #4ba3ce;
+  --textMain: #fff;
+  --mainFont: "Raleway", sans-serif;
+  --baseFontSize: 20px;
+  --baseLineHeight: 1.5;
+  --fontMedium: 500;
+  --fontSemi: 600;
+  --fontBold: 700;
+  --fontExtraBold: 800;
+}
+@media only screen and (min-width: 900px) {
+  :root {
+    --baseFontSize: 24px;
+  }
 }
 
 /*
@@ -55,9 +60,19 @@ html {
 
 .wrapper {
   max-width: var(--xl);
-  padding: 4rem;
+  padding: 1rem;
   margin: 0 auto;
   background: var(--containerBackground);
+}
+@media only screen and (min-width: 782px) {
+  .wrapper {
+    padding: 4rem 2rem;
+  }
+}
+@media only screen and (min-width: 1224px) {
+  .wrapper {
+    padding: 4rem;
+  }
 }
 
 /* 
@@ -102,7 +117,7 @@ figure figcaption {
 
 /* 
     Name: _text
-    Descr: Base text styles, main body links, special text things that are not headers
+    Descr: Base text styles, main body links, all the headin's
 */
 p {
   margin: 0;
@@ -119,20 +134,32 @@ a {
 */
 .pageHeader {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   align-items: center;
+}
+@media only screen and (min-width: 782px) {
+  .pageHeader {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .logo {
   display: grid;
-  grid-template-columns: 125px 1fr;
   align-items: center;
 }
+@media only screen and (min-width: 1224px) {
+  .logo {
+    grid-template-columns: 100px 1fr;
+  }
+}
 .logo a {
-  margin-left: 1.25rem;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: var(--fontExtraBold);
   text-decoration: none;
+}
+@media only screen and (min-width: 1224px) {
+  .logo a {
+    margin-left: 1.25rem;
+  }
 }
 .logo a span {
   display: block;
@@ -140,21 +167,62 @@ a {
   font-weight: var(--fontMedium);
   margin-top: -0.25rem;
 }
+.logo img {
+  max-width: 100px;
+}
+@media only screen and (min-width: 1224px) {
+  .logo img {
+    max-width: 100%;
+  }
+}
 
+/* 
+    Name: _footer
+    Descr: footer styles
+*/
+footer {
+  margin-top: 6rem;
+}
+footer ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  padding: 1em;
+}
+footer ul li {
+  margin: 0.5em 1em;
+}
+@media only screen and (min-width: 480px) {
+  footer ul {
+    padding: 0 2em 4em;
+    flex-direction: row;
+    font-size: 0.75rem;
+  }
+}
 /* 
     Name: _hero
     Descr: Style for the hero image and header
 */
 .hero {
   display: grid;
-  grid-template-columns: 6fr 4fr;
   margin-top: 4rem;
+  gap: 2rem;
   align-items: center;
 }
+@media only screen and (min-width: 782px) {
+  .hero {
+    grid-template-columns: 6fr 4fr;
+  }
+}
 .hero h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: var(--fontExtraBold);
   line-height: 1em;
+}
+@media only screen and (min-width: 1224px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
 }
 
 /* 
@@ -163,7 +231,13 @@ a {
 */
 .mainNav {
   display: flex;
-  justify-content: flex-end;
+  margin-top: 2rem;
+}
+@media only screen and (min-width: 782px) {
+  .mainNav {
+    justify-content: flex-end;
+    margin-top: 0;
+  }
 }
 .mainNav a {
   display: inline-block;
@@ -180,8 +254,12 @@ a {
 .button {
   border-radius: var(--borderRadius);
   padding: 0.5em 1em;
-  font-weight: var(--fontSemi);
   display: inline-block;
+}
+@media only screen and (min-width: 782px) {
+  .button {
+    font-weight: var(--fontSemi);
+  }
 }
 .button--cta {
   background: var(--brandOne);

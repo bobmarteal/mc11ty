@@ -4,7 +4,11 @@
 */
 .mainNav {
   display: flex;
-  justify-content: flex-end;
+  margin-top: 2rem;
+  @include mq(medium) {
+    justify-content: flex-end;
+    margin-top: 0;
+  }
   a {
     display: inline-block;
     padding: 0.5em;

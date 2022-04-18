@@ -3,10 +3,7 @@
     Descr: footer styles
 */
 footer {
-  border-radius: 0 0 var(--border-radius) var(--border-radius);
-  border-top: 1px solid var(--light-gray);
-  background: var(--smoke);
-  color: var(--white);
+  margin-top: 6rem;
   ul {
     list-style-type: none;
     display: grid;
@@ -16,13 +13,12 @@ footer {
     li {
       margin: 0.5em 1em;
     }
-    @include sm {
+    @include mq(small) {
       padding: 0 2em 4em;
       flex-direction: row;
       font-size: 0.75rem;
     }
   }
   a {
-    color: var(--white);
   }
 }

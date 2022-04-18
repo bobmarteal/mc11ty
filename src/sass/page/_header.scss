@@ -5,24 +5,37 @@
 
 .pageHeader {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  @include mq(medium) {
+    grid-template-columns: 1fr 1fr;
+  }
+
   align-items: center;
 }
 
 .logo {
   display: grid;
-  grid-template-columns: 125px 1fr;
+  @include mq(large) {
+    grid-template-columns: 100px 1fr;
+  }
   align-items: center;
   a {
-    margin-left: 1.25rem;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: var(--fontExtraBold);
     text-decoration: none;
+    @include mq(large) {
+      margin-left: 1.25rem;
+    }
     span {
       display: block;
       font-size: 0.75rem;
       font-weight: var(--fontMedium);
       margin-top: -0.25rem;
+    }
+  }
+  img {
+    max-width: 100px;
+    @include mq(large) {
+      max-width: 100%;
     }
   }
 }

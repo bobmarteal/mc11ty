@@ -8,8 +8,12 @@
 
   //font defaults
   --mainFont: "Raleway", sans-serif;
-  --baseFontSize: 24px;
+  --baseFontSize: 20px;
   --baseLineHeight: 1.5;
+
+  @include mq(header) {
+    --baseFontSize: 24px;
+  }
 
   // font weights
   --fontMedium: 500;
