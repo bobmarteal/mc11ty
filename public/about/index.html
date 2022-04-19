@@ -17,6 +17,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,900&display=swap" rel="stylesheet">
+ <script src="/js/jquery-3.4.1.min.js"></script>
+ <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+ <script src="/js/flickity-calls.js" defer></script>
+ <script src="/js/scripts.js" defer></script>
 
 </head>
 
@@ -28,25 +32,30 @@
         <img src="/images/tisha-circle-2.png" alt="">
             <a href="/">Marteal Consulting<span>A nonprofit success consultancy</span></a>
         </div>
-                        <nav class="mainNav">
-                
-                    <a href="/" class="">
-                    Home
-                </a>
-                
-                    <a href="/about" class="">
-                    About
-                </a>
-                
-                    <a href="/services" class="">
-                    Services
-                </a>
-                
-                    <a href="/contact" class="button button--cta">
-                    Contact
-                </a>
-                
-            </nav>
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" >
+    <span class="sr-only">Menu</span>
+    <div class="bar"></div>
+</button>
+
+<nav class="mainNav" id="primary-navigation" data-visible="false">
+    
+        <a href="/" class="">
+        Home
+    </a>
+    
+        <a href="/about" class="">
+        About
+    </a>
+    
+        <a href="/services" class="">
+        Services
+    </a>
+    
+        <a href="/contact" class="button button--cta">
+        Contact
+    </a>
+    
+</nav>
         </header>
         <main>
             <h1>About Marteal Cycle Works</h1>

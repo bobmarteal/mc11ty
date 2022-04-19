@@ -9,6 +9,7 @@
 @import "base/_base";
 @import "base/_images";
 @import "base/_text";
+@import "base/_utilities";
 
 @import "page/_header";
 @import "page/_footer";
@@ -18,7 +19,9 @@
 @import "components/_block";
 @import "components/_columns";
 @import "components/_lists";
+@import "components/_blockquotes";
 
+@import "plugins/_flickity";
 //probably scrap most of here down
 
 // @import "hero";

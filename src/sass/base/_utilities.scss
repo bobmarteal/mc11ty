@@ -1,0 +1,53 @@
+/* 
+    Name: _utilities
+    Descr: Styles for all the bits and bobs that go beyond each element
+*/
+
+.left {
+  @include mq(small) {
+    float: left;
+  }
+}
+.right {
+  @include mq(small) {
+    float: right;
+  }
+}
+.centered {
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.fortyP {
+  @include mq(small) {
+    max-width: 40%;
+  }
+}
+
+/* -------------------------
+
+Title: Visibilities 
+Descr: any hiding or showin
+
+--------------------------- */
+
+// Hidden, only for items that need to be hidden from everything, including screen readers
+.hidden {
+  display: none;
+}
+.offscreen {
+  position: absolute;
+  z-index: -1;
+}
+
+.sr-only {
+  display: block;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(1px);
+  white-space: nowrap;
+  position: absolute;
+}

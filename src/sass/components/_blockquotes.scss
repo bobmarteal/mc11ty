@@ -1,0 +1,13 @@
+/* 
+    Name: _blockquote
+    Descr: Styles the blockquotes
+*/
+
+blockquote {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 2rem;
+  .citation {
+    display: block;
+  }
+}

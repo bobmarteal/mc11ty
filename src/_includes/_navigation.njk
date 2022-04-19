@@ -1,7 +1,12 @@
-            <nav class="mainNav">
-                {% for item in navigation %}
-                    <a href="{{ item.link }}" class="{{ item.class }}">
-                    {{ item.name }}
-                </a>
-                {% endfor %}
-            </nav>
+<button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" >
+    <span class="sr-only">Menu</span>
+    <div class="bar"></div>
+</button>
+
+<nav class="mainNav" id="primary-navigation" data-visible="false">
+    {% for item in navigation %}
+        <a href="{{ item.link }}" class="{{ item.class }}">
+        {{ item.name }}
+    </a>
+    {% endfor %}
+</nav>

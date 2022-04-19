@@ -8,6 +8,15 @@ p {
   margin-top: 1em;
 }
 
+@include mq(laxlrge) {
+  main {
+    p,
+    ul {
+      font-size: 1.5rem;
+    }
+  }
+}
+
 a {
   color: var(--textMain);
 }
@@ -20,9 +29,14 @@ h4 {
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  @include mq(medium) {
+    font-size: 2rem;
+  }
+
   font-weight: var(--fontBold);
   position: relative;
+  margin-top: 0.75em;
   &::after {
     position: absolute;
     content: "";

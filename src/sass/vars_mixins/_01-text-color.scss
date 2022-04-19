@@ -1,7 +1,8 @@
 :root {
   // main colors
   --bodyBackground: #e5e5e5;
-  --containerBackground: #192234;
+  --containerBackground: hsl(220 35% 15% / 1);
+  --containerBackgroundTrans: hsl(220 35% 15% / 0.9);
   --brandOne: #df4b2e;
   --brandTwo: #4ba3ce;
   --textMain: #fff;

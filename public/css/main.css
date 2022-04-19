@@ -2,7 +2,7 @@
   --xsmall: 320px;
   --small: 480px;
   --medium: 782px;
-  --header: 900px;
+  --header: 960px;
   --large: 1224px;
   --xl: 1432px;
   --xxl: 1640;
@@ -10,7 +10,8 @@
 
 :root {
   --bodyBackground: #e5e5e5;
-  --containerBackground: #192234;
+  --containerBackground: hsl(220 35% 15% / 1);
+  --containerBackgroundTrans: hsl(220 35% 15% / 0.9);
   --brandOne: #df4b2e;
   --brandTwo: #4ba3ce;
   --textMain: #fff;
@@ -22,7 +23,7 @@
   --fontBold: 700;
   --fontExtraBold: 800;
 }
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 960px) {
   :root {
     --baseFontSize: 24px;
   }
@@ -48,6 +49,7 @@ body {
   background: var(--containerBackground);
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
 
 html {
@@ -124,6 +126,12 @@ p {
   margin-top: 1em;
 }
 
+@media only screen and (min-width: ) {
+  main p,
+main ul {
+    font-size: 1.5rem;
+  }
+}
 a {
   color: var(--textMain);
 }
@@ -136,9 +144,15 @@ h4 {
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: var(--fontBold);
   position: relative;
+  margin-top: 0.75em;
+}
+@media only screen and (min-width: 782px) {
+  h3 {
+    font-size: 2rem;
+  }
 }
 h3::after {
   position: absolute;
@@ -149,6 +163,60 @@ h3::after {
   left: 0;
   bottom: 0;
   border-radius: var(--borderRadius);
+}
+
+/* 
+    Name: _utilities
+    Descr: Styles for all the bits and bobs that go beyond each element
+*/
+@media only screen and (min-width: 480px) {
+  .left {
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .right {
+    float: right;
+  }
+}
+
+.centered {
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+@media only screen and (min-width: 480px) {
+  .fortyP {
+    max-width: 40%;
+  }
+}
+
+/* -------------------------
+
+Title: Visibilities 
+Descr: any hiding or showin
+
+--------------------------- */
+.hidden {
+  display: none;
+}
+
+.offscreen {
+  position: absolute;
+  z-index: -1;
+}
+
+.sr-only {
+  display: block;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(1px);
+  white-space: nowrap;
+  position: absolute;
 }
 
 /* 
@@ -171,7 +239,7 @@ h3::after {
 }
 @media only screen and (min-width: 1224px) {
   .logo {
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 120px 1fr;
   }
 }
 .logo a {
@@ -254,22 +322,95 @@ footer ul li {
 */
 .mainNav {
   display: flex;
-  margin-top: 2rem;
+  gap: 0.5em;
 }
 @media only screen and (min-width: 782px) {
   .mainNav {
+    align-items: center;
     justify-content: flex-end;
-    margin-top: 0;
+  }
+  .mainNav a {
+    padding: 0.5em;
   }
 }
-.mainNav a {
-  display: inline-block;
-  padding: 0.5em;
-}
-.mainNav a.button {
-  margin-left: 0.5em;
+@media (max-width: 782px) {
+  .mainNav {
+    position: fixed;
+    flex-direction: column;
+    inset: 0 0 0 30%;
+    background: var(--containerBackground);
+    padding: min(20vh, 8rem) 2rem;
+    transform: translateX(100%);
+    z-index: 1000;
+    transition: transform 150ms ease-in;
+  }
+  @supports (backdrop-filter: blur(2rem)) {
+    .mainNav {
+      background: var(--containerBackgroundTrans);
+      backdrop-filter: blur(3rem);
+    }
+  }
+  .mainNav a {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    font-weight: var(--fontSemi);
+  }
+  .mainNav[data-visible=true] {
+    transform: translateX(0%);
+  }
 }
 
+.mobile-nav-toggle {
+  display: none;
+}
+
+@media (max-width: 782px) {
+  .mobile-nav-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 2rem;
+    position: absolute;
+    aspect-ratio: 1;
+    border: none;
+    background-color: transparent;
+    top: 2rem;
+    right: 2rem;
+    z-index: 9999;
+  }
+  .mobile-nav-toggle .bar {
+    width: 100%;
+    height: 4px;
+    border-radius: var(--borderRadius);
+    background: var(--textMain);
+    position: relative;
+  }
+  .mobile-nav-toggle .bar::before, .mobile-nav-toggle .bar::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 4px;
+    left: 0;
+    border-radius: var(--borderRadius);
+    background: var(--textMain);
+    transition: transform 150ms ease-in;
+  }
+  .mobile-nav-toggle .bar::before {
+    top: -0.8em;
+  }
+  .mobile-nav-toggle .bar::after {
+    top: 0.8em;
+  }
+  .mobile-nav-toggle[aria-expanded=true] .bar {
+    background: transparent;
+  }
+  .mobile-nav-toggle[aria-expanded=true] .bar::before {
+    transform: rotateZ(45deg) scaleX(1.25) translate(8px, 8px);
+  }
+  .mobile-nav-toggle[aria-expanded=true] .bar::after {
+    transform: rotateZ(-45deg) scaleX(1.25) translate(5px, -6px);
+  }
+}
 /* 
     Name: _block
     Descr: Style the inpage block sections
@@ -279,27 +420,44 @@ footer ul li {
 }
 .block__title {
   font-weight: var(--fontExtraBold);
-  font-size: 4rem;
+  font-size: 3rem;
   margin: 0;
+  line-height: 1;
 }
-.block .block__title + div {
-  margin-top: 2rem;
+@media only screen and (min-width: 782px) {
+  .block__title {
+    font-size: 4rem;
+  }
 }
 
 .block--circly {
   position: relative;
   z-index: 2;
 }
-.block--circly::before {
-  position: absolute;
-  content: "";
-  background-color: var(--brandOne);
-  width: 800px;
-  height: 800px;
-  top: 5rem;
-  right: calc(-1 * (50% - 3rem));
-  border-radius: 50%;
-  z-index: -1;
+@media only screen and (min-width: 782px) {
+  .block--circly::before {
+    position: absolute;
+    content: "";
+    background-image: url("/images/tishas-circle-big.png");
+    background-repeat: no-repeat;
+    width: 800px;
+    height: 800px;
+    top: 0rem;
+    right: -50%;
+    border-radius: 50%;
+    z-index: -1;
+  }
+}
+@media only screen and (min-width: 782px) and (min-width: 1224px) {
+  .block--circly::before {
+    top: 3rem;
+    right: calc(-1 * (50% - 10rem));
+  }
+}
+@media only screen and (min-width: 782px) and (min-width: 1432px) {
+  .block--circly::before {
+    right: -20%;
+  }
 }
 
 /* 
@@ -314,7 +472,7 @@ footer ul li {
 .columns--two {
   position: relative;
 }
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 960px) {
   .columns--two {
     grid-template-columns: 1fr 1fr;
   }
@@ -340,6 +498,163 @@ footer ul li {
 */
 ul {
   list-style-type: circle;
+}
+
+/* 
+    Name: _blockquote
+    Descr: Styles the blockquotes
+*/
+blockquote {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 2rem;
+}
+blockquote .citation {
+  display: block;
+}
+
+/*! Flickity v2.3.0
+https://flickity.metafizzy.co
+---------------------------------------------- */
+.flickity-enabled {
+  position: relative;
+}
+
+.flickity-enabled:focus {
+  outline: none;
+}
+
+.flickity-viewport {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+.flickity-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* draggable */
+.flickity-enabled.is-draggable {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+/* ---- flickity-button ---- */
+.flickity-button {
+  position: absolute;
+  background: hsla(0deg, 0%, 100%, 0.75);
+  border: none;
+  color: #333;
+}
+
+.flickity-button:hover {
+  background: white;
+  cursor: pointer;
+}
+
+.flickity-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 5px #19f;
+}
+
+.flickity-button:active {
+  opacity: 0.6;
+}
+
+.flickity-button:disabled {
+  opacity: 0.3;
+  cursor: auto;
+  /* prevent disabled button from capturing pointer up event. #716 */
+  pointer-events: none;
+}
+
+.flickity-button-icon {
+  fill: currentColor;
+}
+
+/* ---- previous/next buttons ---- */
+.flickity-prev-next-button {
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  /* vertically center */
+  transform: translateY(-50%);
+}
+
+.flickity-prev-next-button.previous {
+  left: 10px;
+}
+
+.flickity-prev-next-button.next {
+  right: 10px;
+}
+
+/* right to left */
+.flickity-rtl .flickity-prev-next-button.previous {
+  left: auto;
+  right: 10px;
+}
+
+.flickity-rtl .flickity-prev-next-button.next {
+  right: auto;
+  left: 10px;
+}
+
+.flickity-prev-next-button .flickity-button-icon {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  width: 60%;
+  height: 60%;
+}
+
+/* ---- page dots ---- */
+.flickity-page-dots {
+  position: absolute;
+  width: 100%;
+  bottom: -25px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  line-height: 1;
+}
+
+.flickity-rtl .flickity-page-dots {
+  direction: rtl;
+}
+
+.flickity-page-dots .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 8px;
+  background: #333;
+  border-radius: 50%;
+  opacity: 0.25;
+  cursor: pointer;
+}
+
+.flickity-page-dots .dot.is-selected {
+  opacity: 1;
 }
 
 /* 
