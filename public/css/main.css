@@ -60,6 +60,10 @@ html {
   color: var(--textMain);
 }
 
+main {
+  margin-top: 4rem;
+}
+
 .wrapper {
   max-width: var(--xl);
   padding: 1rem;
@@ -141,6 +145,10 @@ h2,
 h3,
 h4 {
   margin: 0;
+}
+
+* + h2 {
+  margin-top: 1em;
 }
 
 h3 {
@@ -296,7 +304,6 @@ footer ul li {
 */
 .hero {
   display: grid;
-  margin-top: 4rem;
   gap: 2rem;
   align-items: center;
 }
@@ -339,6 +346,7 @@ footer ul li {
     flex-direction: column;
     inset: 0 0 0 30%;
     background: var(--containerBackground);
+    background: green;
     padding: min(20vh, 8rem) 2rem;
     transform: translateX(100%);
     z-index: 1000;
