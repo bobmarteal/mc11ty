@@ -151,26 +151,40 @@ h4 {
   margin-top: 1em;
 }
 
+h2 {
+  font-size: 2rem;
+}
+
 h3 {
   font-size: 1.5rem;
   font-weight: var(--fontBold);
   position: relative;
-  margin-top: 0.75em;
-}
-@media only screen and (min-width: 782px) {
-  h3 {
-    font-size: 2rem;
-  }
+  margin-top: 1em;
+  line-height: 1.2;
 }
 h3::after {
   position: absolute;
   content: "";
   background-color: var(--brandOne);
-  height: 0.25rem;
+  height: 4px;
   width: 100px;
   left: 0;
-  bottom: 0;
+  bottom: -6px;
   border-radius: var(--borderRadius);
+}
+
+.page__title,
+.block__title {
+  font-weight: var(--fontExtraBold);
+  font-size: 3rem;
+  margin: 0;
+  line-height: 1;
+}
+ul {
+  padding-left: 0;
+}
+ul li {
+  margin-top: 0.25em;
 }
 
 /* 
@@ -299,6 +313,19 @@ footer ul li {
   }
 }
 /* 
+    Name: _main
+    Descr: Styles the main element
+*/
+.basicPage h1,
+.basicPage h2,
+.basicPage h3,
+.basicPage ul,
+.basicPage ol,
+.basicPage p {
+  max-width: var(--header);
+}
+
+/* 
     Name: _hero
     Descr: Style for the hero image and header
 */
@@ -426,18 +453,6 @@ footer ul li {
 .block {
   margin-top: 6rem;
 }
-.block__title {
-  font-weight: var(--fontExtraBold);
-  font-size: 3rem;
-  margin: 0;
-  line-height: 1;
-}
-@media only screen and (min-width: 782px) {
-  .block__title {
-    font-size: 4rem;
-  }
-}
-
 .block--circly {
   position: relative;
   z-index: 2;
@@ -674,11 +689,6 @@ https://flickity.metafizzy.co
   padding: 0.5em 1em;
   font-size: 1rem;
   display: inline-block;
-}
-@media only screen and (min-width: 782px) {
-  .button {
-    font-weight: var(--fontSemi);
-  }
 }
 .button--cta {
   background: var(--brandOne);

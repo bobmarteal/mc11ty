@@ -1,0 +1,15 @@
+/* 
+    Name: _main
+    Descr: Styles the main element
+*/
+
+.basicPage {
+  h1,
+  h2,
+  h3,
+  ul,
+  ol,
+  p {
+    max-width: var(--header);
+  }
+}

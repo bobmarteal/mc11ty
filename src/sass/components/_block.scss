@@ -6,13 +6,13 @@
 .block {
   margin-top: 6rem;
   &__title {
-    font-weight: var(--fontExtraBold);
-    font-size: 3rem;
-    @include mq(medium) {
-      font-size: 4rem;
-    }
-    margin: 0;
-    line-height: 1;
+    // font-weight: var(--fontExtraBold);
+    // font-size: 3rem;
+    // @include mq(medium) {
+    //   // font-size: 4rem;
+    // }
+    // margin: 0;
+    // line-height: 1;
   }
   // .block__title + div {
   //   margin-top: 2rem;

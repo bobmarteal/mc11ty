@@ -8,7 +8,7 @@
   padding: 0.5em 1em;
   font-size: 1rem;
   @include mq(medium) {
-    font-weight: var(--fontSemi);
+    // font-weight: var(--fontSemi);
   }
 
   display: inline-block;
