@@ -527,13 +527,20 @@ ul {
     Name: _blockquote
     Descr: Styles the blockquotes
 */
-blockquote {
+.quote {
+  border-top: 1px solid var(--brandTwo);
+  border-bottom: 1px solid var(--brandTwo);
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 400px 1fr;
   gap: 2rem;
 }
-blockquote .citation {
-  display: block;
+.quote .quote__image {
+  padding: 2rem;
+  padding-right: 0;
+}
+.quote blockquote {
+  font-style: italic;
+  font-size: 1.5rem;
 }
 
 /*! Flickity v2.3.0

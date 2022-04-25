@@ -3,11 +3,19 @@
     Descr: Styles the blockquotes
 */
 
-blockquote {
+.quote {
+  border-top: 1px solid var(--brandTwo);
+  border-bottom: 1px solid var(--brandTwo);
+
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: max(400px) 1fr;
   gap: 2rem;
-  .citation {
-    display: block;
+  .quote__image {
+    padding: 2rem;
+    padding-right: 0;
+  }
+  blockquote {
+    font-style: italic;
+    font-size: 1.5rem;
   }
 }
