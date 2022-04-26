@@ -4,14 +4,10 @@
 */
 
 .left {
-  @include mq(small) {
-    float: left;
-  }
+  float: left;
 }
 .right {
-  @include mq(small) {
-    float: right;
-  }
+  float: right;
 }
 .centered {
   margin-left: 50%;

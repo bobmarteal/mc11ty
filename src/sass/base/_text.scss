@@ -62,9 +62,9 @@ h3 {
 .page__title,
 .block__title {
   font-weight: var(--fontExtraBold);
-  font-size: 3rem;
+  font-size: 2.5rem;
   @include mq(medium) {
-    // font-size: 4rem;
+    font-size: 3;
   }
   margin: 0;
   line-height: 1;
@@ -72,7 +72,7 @@ h3 {
 
 // lists
 ul {
-  padding-left: 0;
+  padding-left: 1em;
   li {
     margin-top: 0.25em;
   }

@@ -6,16 +6,74 @@
 .quote {
   border-top: 1px solid var(--brandTwo);
   border-bottom: 1px solid var(--brandTwo);
+  overflow-y: visible;
 
-  display: grid;
-  grid-template-columns: max(400px) 1fr;
-  gap: 2rem;
+  display: flex;
+  flex-direction: column-reverse;
+
+  @include mq(medium) {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 1rem;
+  }
+  @include mq(header) {
+    grid-template-columns: 300px 1fr;
+    gap: 1.5rem;
+  }
+  @include mq(xl) {
+    grid-template-columns: 400px 1fr;
+    gap: 2rem;
+  }
   .quote__image {
     padding: 2rem;
-    padding-right: 0;
+    @include mq(medium) {
+      padding-right: 0;
+    }
   }
   blockquote {
     font-style: italic;
-    font-size: 1.5rem;
+    @include mq(medium) {
+      font-size: 1.25rem;
+    }
+
+    @include mq(large) {
+      font-size: 1.5rem;
+    }
+  }
+
+  // quote before and after stuff
+  position: relative;
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    width: 2em;
+    height: 2em;
+    background: var(--brandOne);
+    background-image: url(/images/quote.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid var(--brandTwo);
+    border-radius: 50%;
+  }
+  &::before {
+    top: -1.5em;
+    left: 3rem;
+  }
+  &::after {
+    bottom: -1.5em;
+    right: 2rem;
+    transform: scaleX(-1);
+  }
+}
+
+// flickified quotes
+.flickity-enabled {
+  .quote {
+    opacity: 0.05;
+    transition: opacity 150ms ease-in;
+    &.is-selected {
+      opacity: 1;
+    }
   }
 }

@@ -108,17 +108,13 @@ figure {
 figure figcaption {
   font-size: 0.75rem;
 }
-@media only screen and (min-width: 480px) {
-  figure.right {
-    margin-left: 1.5rem;
-    margin-right: 0;
-  }
+figure.right {
+  margin-left: 1.5rem;
+  margin-right: 0;
 }
-@media only screen and (min-width: 480px) {
-  figure.left {
-    margin-right: 1.5rem;
-    margin-left: 0;
-  }
+figure.left {
+  margin-right: 1.5rem;
+  margin-left: 0;
 }
 
 /* 
@@ -176,12 +172,19 @@ h3::after {
 .page__title,
 .block__title {
   font-weight: var(--fontExtraBold);
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin: 0;
   line-height: 1;
 }
+@media only screen and (min-width: 782px) {
+  .page__title,
+.block__title {
+    font-size: 3;
+  }
+}
+
 ul {
-  padding-left: 0;
+  padding-left: 1em;
 }
 ul li {
   margin-top: 0.25em;
@@ -191,16 +194,12 @@ ul li {
     Name: _utilities
     Descr: Styles for all the bits and bobs that go beyond each element
 */
-@media only screen and (min-width: 480px) {
-  .left {
-    float: left;
-  }
+.left {
+  float: left;
 }
 
-@media only screen and (min-width: 480px) {
-  .right {
-    float: right;
-  }
+.right {
+  float: right;
 }
 
 .centered {
@@ -451,8 +450,19 @@ footer ul li {
     Descr: Style the inpage block sections
 */
 .block {
-  margin-top: 6rem;
+  margin-top: 2rem;
 }
+@media only screen and (min-width: 782px) {
+  .block {
+    margin-top: 4rem;
+  }
+}
+@media only screen and (min-width: 1432px) {
+  .block {
+    margin-top: 6rem;
+  }
+}
+
 .block--circly {
   position: relative;
   z-index: 2;
@@ -530,17 +540,79 @@ ul {
 .quote {
   border-top: 1px solid var(--brandTwo);
   border-bottom: 1px solid var(--brandTwo);
-  display: grid;
-  grid-template-columns: 400px 1fr;
-  gap: 2rem;
+  overflow-y: visible;
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+}
+@media only screen and (min-width: 782px) {
+  .quote {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 1rem;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .quote {
+    grid-template-columns: 300px 1fr;
+    gap: 1.5rem;
+  }
+}
+@media only screen and (min-width: 1432px) {
+  .quote {
+    grid-template-columns: 400px 1fr;
+    gap: 2rem;
+  }
 }
 .quote .quote__image {
   padding: 2rem;
-  padding-right: 0;
+}
+@media only screen and (min-width: 782px) {
+  .quote .quote__image {
+    padding-right: 0;
+  }
 }
 .quote blockquote {
   font-style: italic;
-  font-size: 1.5rem;
+}
+@media only screen and (min-width: 782px) {
+  .quote blockquote {
+    font-size: 1.25rem;
+  }
+}
+@media only screen and (min-width: 1224px) {
+  .quote blockquote {
+    font-size: 1.5rem;
+  }
+}
+.quote::before, .quote::after {
+  position: absolute;
+  content: "";
+  width: 2em;
+  height: 2em;
+  background: var(--brandOne);
+  background-image: url(/images/quote.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid var(--brandTwo);
+  border-radius: 50%;
+}
+.quote::before {
+  top: -1.5em;
+  left: 3rem;
+}
+.quote::after {
+  bottom: -1.5em;
+  right: 2rem;
+  transform: scaleX(-1);
+}
+
+.flickity-enabled .quote {
+  opacity: 0.05;
+  transition: opacity 150ms ease-in;
+}
+.flickity-enabled .quote.is-selected {
+  opacity: 1;
 }
 
 /*! Flickity v2.3.0
@@ -555,7 +627,6 @@ https://flickity.metafizzy.co
 }
 
 .flickity-viewport {
-  overflow: hidden;
   position: relative;
   height: 100%;
 }
