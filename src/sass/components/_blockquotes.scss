@@ -11,6 +11,8 @@
   display: flex;
   flex-direction: column-reverse;
 
+  margin: 3rem 0;
+
   @include mq(medium) {
     display: grid;
     grid-template-columns: 200px 1fr;
