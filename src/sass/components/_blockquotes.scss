@@ -20,11 +20,10 @@
   }
   @include mq(header) {
     grid-template-columns: 300px 1fr;
-    gap: 1.5rem;
+    // gap: 1.5rem;
   }
   @include mq(xl) {
     grid-template-columns: 400px 1fr;
-    gap: 2rem;
   }
   .quote__image {
     padding: 2rem;
@@ -39,7 +38,7 @@
     }
 
     @include mq(large) {
-      font-size: 1.5rem;
+      // font-size: 1.5rem;
     }
   }
 

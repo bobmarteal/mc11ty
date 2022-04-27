@@ -15,6 +15,7 @@ html {
   font-weight: var(--fontMedium);
   line-height: var(--baseLineHeight);
   color: var(--textMain);
+  scroll-behavior: smooth;
 }
 main {
   margin-top: 4rem;

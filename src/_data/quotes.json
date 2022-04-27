@@ -14,13 +14,6 @@
     "image_alt": "Kartik Sribarra"
   },
   {
-    "name": "Monika Roth",
-    "position": "ICG Co-Founder",
-    "quote": "I learned a great deal from Erin about building a board, engaging donors, and building a solid team of staff with passion for the mission.",
-    "image_path": "images/Monika-Roth.jpg",
-    "image_alt": "Monika Roth"
-  },
-  {
     "name": "Tori Chamberlin",
     "position": "Former ICG Philanthropy Associate",
     "quote": "I feel very fortunate to have worked with Erin so early on in my career. I knew from the start that she was there to support me. Erin saw my potential and sparkle and helped to remind me of it.",
@@ -30,16 +23,9 @@
   {
     "name": "Ritza Francois",
     "position": "ICG Director of Development",
-    "quote": "Erin has this amazing ability to assure and handle any situation with the utmost care and energy it deserves",
+    "quote": "Erin has this amazing ability to assure and handle any situation with the utmost care and energy it deserves.",
     "image_path": "images/Ritza-Francois.jpg",
     "image_alt": "Ritza Francois"
-  },
-  {
-    "name": "Brandon Blas",
-    "position": "Greater Ithaca Activites Center (GIAC) Program Coordinator",
-    "quote": "Thanks to our work with Erin, our staff, participants, and families all have a better understanding of our community and the natural resources that exist within it.",
-    "image_path": "images/Brandon-Blas.jpg",
-    "image_alt": "Brandon Blas"
   },
   {
     "name": "Dan Klein",
@@ -47,5 +33,19 @@
     "quote": "Erin is magic as far as I am concerned, one of the few magic people I have ever met.",
     "image_path": "images/Dan-Klein.jpg",
     "image_alt": "Dan Klein"
+  },
+  {
+    "name": "Andrew Slaughter",
+    "position": "Associate Engineer, Leyline Renewables",
+    "quote": "I use the lessons Erin taught me every day.",
+    "image_path": "images/Andrew-Slaughter.jpg",
+    "image_alt": "Andrew Slaughter"
+  },
+  {
+    "name": "Lauren Salzman",
+    "position": "Educator",
+    "quote": "Erin gives so generously of herself, her heart, her myriad skills and her creative vision. She provides a rare kind of nurturing leadership that has enabled me to love my work, and grow in my role. I am forever grateful for the opportunity to work with Erin!",
+    "image_path": "images/Lauren-Salzman.jpg",
+    "image_alt": "Lauren Salzman"
   }
 ]
