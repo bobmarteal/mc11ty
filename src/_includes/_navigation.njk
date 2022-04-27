@@ -5,8 +5,8 @@
 
 <nav class="mainNav" id="primary-navigation" data-visible="false">
     {% for item in navigation %}
-        <a href="{{ item.link }}" class="{{ item.class }}">
-        {{ item.name }}
+        <a href="{{ item.link }}" class="{{ item.class }}{% if item.link == page.url%} current{%endif%}">
+        {{ item.name }} 
     </a>
     {% endfor %}
 </nav>
