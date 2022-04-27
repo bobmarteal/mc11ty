@@ -1,0 +1,15 @@
+<div class="quotes carousel">
+    {% for item in quotes%}
+	<div class="quote">
+		<div class="quote__image">
+			<img src="{{item.image_path}}" alt="{{item.image_alt}}">
+			<p>
+				{{item.name}} <br />{{item.position}}
+			</p>
+		</div>
+		<blockquote>
+			<p>{{item.quote}}</p>
+		</blockquote>
+	</div>
+    {% endfor %}
+</div>

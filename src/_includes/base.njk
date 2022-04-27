@@ -39,7 +39,7 @@
         <header class="pageHeader">
         <div class="logo">
             <img src="/images/tisha-circle-2.png" alt="">
-            <a href="/">Marteal Consulting<span>A nonprofit success consultancy</span></a>
+            <a href="/">Marteal Consulting<span>Supporting nonprofit leadership and success</span></a>
         </div>
             {% include "_navigation.njk" %}
         </header>
@@ -48,30 +48,27 @@
         </main>
         <footer>
             <div class="contact">
-                <div>
                 <h2>
                     Contact
                 </h2>
                 <p>
                    Learn how a compassionate and results-driven approach can push your non-profit in new directions.
-                </p>  
-                </div>
-
-                <form name="contact" method="POST" data-netlify="true">
-                    <p>
-                        <label for="name">Your Name: <br /><input type="text" name="name" id="name" /></label>
-                    </p>
-                    <p>
-                        <label for="email">Your Email: <br /><input type="email" name="email" id="email" /></label>
-                    </p>
-                    <p>
-                        <label>Message: <br /><textarea name="message"></textarea></label>
-                    </p>
-                    <p>
-                        <button type="submit">Send</button>
-                    </p>
-                </form>
+                </p>               
             </div>
+            <form name="contact" method="POST" data-netlify="true" id="contact-form">
+                <p>
+                    <label for="name">Your Name: <br /><input type="text" name="name" id="name" /></label>
+                </p>
+                <p>
+                    <label for="email">Your Email: <br /><input type="email" name="email" id="email" /></label>
+                </p>
+                <p>
+                    <label>Message: <br /><textarea name="message"></textarea></label>
+                </p>
+                <p>
+                    <button type="submit">Send</button>
+                </p>
+            </form>
             <ul>
                 <li>
                     <a href="mailto:martealconsulting@gmail.com">Email Marteal Consulting</a>

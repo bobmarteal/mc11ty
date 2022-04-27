@@ -4,6 +4,24 @@
 */
 footer {
   margin-top: 6rem;
+  display: grid;
+  @include mq(medium) {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto;
+    gap: 2rem;
+    .contact {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    form {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    ul {
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
+  }
   ul {
     list-style-type: none;
     display: grid;
