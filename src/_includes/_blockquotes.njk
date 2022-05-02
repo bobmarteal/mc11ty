@@ -3,12 +3,13 @@
 	<div class="quote">
 		<div class="quote__image">
 			<img src="{{item.image_path}}" alt="{{item.image_alt}}">
-			<p>
-				{{item.name}} <br />{{item.position}}
-			</p>
+			
 		</div>
 		<blockquote>
 			<p>{{item.quote}}</p>
+			<p class="quote__attribution">
+				{{item.name}} <br />{{item.position}}
+			</p>
 		</blockquote>
 	</div>
     {% endfor %}
