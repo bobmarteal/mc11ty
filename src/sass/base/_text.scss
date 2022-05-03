@@ -8,15 +8,6 @@ p {
   margin-top: 1em;
 }
 
-@include mq(laxlrge) {
-  main {
-    p,
-    ul {
-      font-size: 1.5rem;
-    }
-  }
-}
-
 a {
   color: var(--textMain);
 }
@@ -26,6 +17,11 @@ h2,
 h3,
 h4 {
   margin: 0;
+}
+
+h2,
+h3 {
+  font-weight: var(--fontMedium);
 }
 
 * + h2 {
@@ -42,17 +38,16 @@ h3 {
   @include mq(medium) {
     // font-size: 2rem;
   }
-
-  font-weight: var(--fontBold);
   position: relative;
+  display: inline-block;
   margin-top: 1em;
   line-height: 1.2;
   &::after {
     position: absolute;
     content: "";
     background-color: var(--brandOne);
-    height: 4px;
-    width: 100px;
+    height: 1px;
+    width: 100%;
     left: 0;
     bottom: -6px;
     border-radius: var(--borderRadius);
@@ -77,4 +72,24 @@ ul {
   li {
     margin-top: 0.25em;
   }
+}
+
+p,
+ul {
+  max-width: 70ch;
+}
+
+// step
+.step {
+  font-weight: var(--fontExtraBold);
+  color: var(--brandOne);
+  font-size: 1.5em;
+  background-color: var(--containerBackgroundTrans);
+  width: 166px;
+  height: 166px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-top: 2rem;
 }

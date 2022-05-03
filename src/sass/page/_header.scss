@@ -14,28 +14,29 @@
 
 .logo {
   display: grid;
-  @include mq(large) {
+  @include mq(header) {
     grid-template-columns: 120px 1fr;
+    margin-left: -1em;
   }
   align-items: center;
   a {
-    font-size: 1.5rem;
-    font-weight: var(--fontExtraBold);
+    font-size: 1.25rem;
+    font-weight: var(--fontBold);
     text-decoration: none;
     @include mq(large) {
-      margin-left: 1.25rem;
+      margin-left: 0.75rem;
     }
     span {
       display: block;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: var(--fontMedium);
       margin-top: -0.25rem;
     }
   }
   img {
     max-width: 100px;
-    @include mq(large) {
-      max-width: 100%;
-    }
+    // @include mq(large) {
+    //   max-width: 100%;
+    // }
   }
 }

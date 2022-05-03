@@ -85,25 +85,25 @@ https://flickity.metafizzy.co
   top: 50%;
   width: 44px;
   height: 44px;
-  border-radius: 50%;
+  // border-radius: 50%;
   /* vertically center */
   transform: translateY(-50%);
 }
 
 .flickity-prev-next-button.previous {
-  left: 10px;
+  left: -1em;
 }
 .flickity-prev-next-button.next {
-  right: 10px;
+  right: -1em;
 }
 /* right to left */
 .flickity-rtl .flickity-prev-next-button.previous {
   left: auto;
-  right: 10px;
+  right: -1em;
 }
 .flickity-rtl .flickity-prev-next-button.next {
   right: auto;
-  left: 10px;
+  left: -1em;
 }
 
 .flickity-prev-next-button .flickity-button-icon {

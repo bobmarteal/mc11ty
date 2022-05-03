@@ -11,7 +11,7 @@
 :root {
   --bodyBackground: #e5e5e5;
   --containerBackground: hsl(220 35% 15% / 1);
-  --containerBackgroundTrans: hsl(220 35% 15% / 0.9);
+  --containerBackgroundTrans: hsl(221, 33%, 24%);
   --brandOne: #df4b2e;
   --brandTwo: #4ba3ce;
   --textMain: #fff;
@@ -37,7 +37,7 @@
   -various itesm
 */
 :root {
-  --borderRadius: 8px;
+  --borderRadius: 2px;
 }
 
 /* 
@@ -127,12 +127,6 @@ p {
   margin-top: 1em;
 }
 
-@media only screen and (min-width: ) {
-  main p,
-main ul {
-    font-size: 1.5rem;
-  }
-}
 a {
   color: var(--textMain);
 }
@@ -142,6 +136,11 @@ h2,
 h3,
 h4 {
   margin: 0;
+}
+
+h2,
+h3 {
+  font-weight: var(--fontMedium);
 }
 
 * + h2 {
@@ -155,8 +154,8 @@ h2 {
 
 h3 {
   font-size: 1.5rem;
-  font-weight: var(--fontBold);
   position: relative;
+  display: inline-block;
   margin-top: 1em;
   line-height: 1.2;
 }
@@ -164,8 +163,8 @@ h3::after {
   position: absolute;
   content: "";
   background-color: var(--brandOne);
-  height: 4px;
-  width: 100px;
+  height: 1px;
+  width: 100%;
   left: 0;
   bottom: -6px;
   border-radius: var(--borderRadius);
@@ -190,6 +189,25 @@ ul {
 }
 ul li {
   margin-top: 0.25em;
+}
+
+p,
+ul {
+  max-width: 70ch;
+}
+
+.step {
+  font-weight: var(--fontExtraBold);
+  color: var(--brandOne);
+  font-size: 1.5em;
+  background-color: var(--containerBackgroundTrans);
+  width: 166px;
+  height: 166px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-top: 2rem;
 }
 
 /* 
@@ -260,34 +278,30 @@ Descr: any hiding or showin
   display: grid;
   align-items: center;
 }
-@media only screen and (min-width: 1224px) {
+@media only screen and (min-width: 960px) {
   .logo {
     grid-template-columns: 120px 1fr;
+    margin-left: -1em;
   }
 }
 .logo a {
-  font-size: 1.5rem;
-  font-weight: var(--fontExtraBold);
+  font-size: 1.25rem;
+  font-weight: var(--fontBold);
   text-decoration: none;
 }
 @media only screen and (min-width: 1224px) {
   .logo a {
-    margin-left: 1.25rem;
+    margin-left: 0.75rem;
   }
 }
 .logo a span {
   display: block;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: var(--fontMedium);
   margin-top: -0.25rem;
 }
 .logo img {
   max-width: 100px;
-}
-@media only screen and (min-width: 1224px) {
-  .logo img {
-    max-width: 100%;
-  }
 }
 
 /* 
@@ -370,6 +384,7 @@ footer ul {
 .mainNav {
   display: flex;
   gap: 1em;
+  font-size: 0.8rem;
 }
 @media only screen and (min-width: 782px) {
   .mainNav {
@@ -476,7 +491,7 @@ footer ul {
     background: transparent;
   }
   .mobile-nav-toggle[aria-expanded=true] .bar::before {
-    transform: rotateZ(45deg) scaleX(1.25) translate(8px, 8px);
+    transform: rotateZ(45deg) scaleX(1.25) translate(9px, 9px);
   }
   .mobile-nav-toggle[aria-expanded=true] .bar::after {
     transform: rotateZ(-45deg) scaleX(1.25) translate(5px, -6px);
@@ -575,65 +590,61 @@ ul {
     Descr: Styles the blockquotes
 */
 .quote {
-  border-top: 1px solid var(--brandTwo);
-  border-bottom: 1px solid var(--brandTwo);
   overflow-y: visible;
   display: flex;
   flex-direction: column-reverse;
-  margin: 3rem 0;
-  position: relative;
-}
-@media only screen and (min-width: 782px) {
-  .quote {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 1rem;
-  }
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1em;
+  align-items: center;
 }
 @media only screen and (min-width: 960px) {
   .quote {
     grid-template-columns: 300px 1fr;
   }
 }
-.quote .quote__image {
-  padding: 2rem;
-}
 @media only screen and (min-width: 782px) {
   .quote .quote__image {
-    padding-right: 0;
+    padding: 2rem 0 2rem 1em;
   }
 }
 .quote blockquote {
   font-style: italic;
+  margin-left: 0;
+  border-left: 4px solid var(--brandTwo);
+  padding-left: 1em;
 }
-@media only screen and (min-width: 782px) {
-  .quote blockquote {
-    font-size: 1.25rem;
-  }
+.quote p:first-of-type {
+  margin-top: 0;
 }
 .quote .quote__attribution {
   font-style: normal;
   font-size: 0.75em;
 }
-.quote::before, .quote::after {
+
+.quotes {
+  background-color: hsl(209deg, 41%, 22%);
+  position: relative;
+}
+.quotes::before, .quotes::after {
   position: absolute;
   content: "";
   width: 2em;
   height: 2em;
-  background: var(--brandOne);
+  background: var(--containerBackground);
   background-image: url(/images/quote.svg);
   background-repeat: no-repeat;
   background-position: center;
   border: 1px solid var(--brandTwo);
   border-radius: 50%;
+  left: calc(50% - 1em);
 }
-.quote::before {
-  top: -1.5em;
-  left: 3rem;
+.quotes::before {
+  top: -1em;
 }
-.quote::after {
-  bottom: -1.5em;
-  right: 2rem;
+.quotes::after {
+  bottom: -1em;
   transform: scaleX(-1);
 }
 
@@ -747,28 +758,27 @@ https://flickity.metafizzy.co
   top: 50%;
   width: 44px;
   height: 44px;
-  border-radius: 50%;
   /* vertically center */
   transform: translateY(-50%);
 }
 
 .flickity-prev-next-button.previous {
-  left: 10px;
+  left: -1em;
 }
 
 .flickity-prev-next-button.next {
-  right: 10px;
+  right: -1em;
 }
 
 /* right to left */
 .flickity-rtl .flickity-prev-next-button.previous {
   left: auto;
-  right: 10px;
+  right: -1em;
 }
 
 .flickity-rtl .flickity-prev-next-button.next {
   right: auto;
-  left: 10px;
+  left: -1em;
 }
 
 .flickity-prev-next-button .flickity-button-icon {
@@ -817,7 +827,6 @@ https://flickity.metafizzy.co
 .button {
   border-radius: var(--borderRadius);
   padding: 0.5em 1em;
-  font-size: 1rem;
   display: inline-block;
 }
 .button--cta {

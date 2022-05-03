@@ -6,7 +6,7 @@
 .button {
   border-radius: var(--borderRadius);
   padding: 0.5em 1em;
-  font-size: 1rem;
+  // font-size: 1rem;
   @include mq(medium) {
     // font-weight: var(--fontSemi);
   }

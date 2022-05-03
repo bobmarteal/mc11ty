@@ -4,48 +4,58 @@
 */
 
 .quote {
-  border-top: 1px solid var(--brandTwo);
-  border-bottom: 1px solid var(--brandTwo);
+  // border-top: 1px solid var(--brandTwo);
+  // border-bottom: 1px solid var(--brandTwo);
   overflow-y: visible;
 
   display: flex;
   flex-direction: column-reverse;
 
-  margin: 3rem 0;
+  margin: 1rem 0;
 
-  @include mq(medium) {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 1rem;
-  }
+  // @include mq(medium) {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1em;
+  align-items: center;
+  // }
   @include mq(header) {
     grid-template-columns: 300px 1fr;
-    // gap: 1.5rem;
+    //   // gap: 1.5rem;
   }
   @include mq(xl) {
     // grid-template-columns: 400px 1fr;
   }
   .quote__image {
-    padding: 2rem;
+    // padding: 2rem;
     @include mq(medium) {
-      padding-right: 0;
+      padding: 2rem 0 2rem 1em;
     }
   }
   blockquote {
     font-style: italic;
-    @include mq(medium) {
-      font-size: 1.25rem;
+    margin-left: 0;
+    border-left: 4px solid var(--brandTwo);
+    padding-left: 1em;
+    @include mq(xl) {
+      // font-size: 1.25rem;
     }
 
-    @include mq(large) {
+    @include mq(xl) {
       // font-size: 1.5rem;
     }
+  }
+  p:first-of-type {
+    margin-top: 0;
   }
   .quote__attribution {
     font-style: normal;
     font-size: 0.75em;
   }
+}
 
+.quotes {
+  background-color: hsl(209, 41, 22%, 100%);
   // quote before and after stuff
   position: relative;
   &::before,
@@ -54,24 +64,24 @@
     content: "";
     width: 2em;
     height: 2em;
-    background: var(--brandOne);
+    background: var(--containerBackground);
     background-image: url(/images/quote.svg);
     background-repeat: no-repeat;
     background-position: center;
     border: 1px solid var(--brandTwo);
     border-radius: 50%;
+    left: calc(50% - 1em);
   }
   &::before {
-    top: -1.5em;
-    left: 3rem;
+    top: -1em;
+    // left: 3rem;
   }
   &::after {
-    bottom: -1.5em;
-    right: 2rem;
+    bottom: -1em;
+    // right: 2rem;
     transform: scaleX(-1);
   }
 }
-
 // flickified quotes
 .flickity-enabled {
   .quote {
