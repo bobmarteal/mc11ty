@@ -23,7 +23,7 @@
     font-size: 1.25rem;
     font-weight: var(--fontBold);
     text-decoration: none;
-    @include mq(large) {
+    @include mq(header) {
       margin-left: 0.75rem;
     }
     span {
@@ -34,9 +34,9 @@
     }
   }
   img {
-    max-width: 100px;
-    // @include mq(large) {
-    //   max-width: 100%;
-    // }
+    width: 100px;
+    @include mq(header) {
+      width: 100%;
+    }
   }
 }

@@ -21,7 +21,7 @@ h4 {
 
 h2,
 h3 {
-  font-weight: var(--fontMedium);
+  // font-weight: var(--fontMedium);
 }
 
 * + h2 {
@@ -47,7 +47,7 @@ h3 {
     content: "";
     background-color: var(--brandOne);
     height: 1px;
-    width: 100%;
+    width: 200px;
     left: 0;
     bottom: -6px;
     border-radius: var(--borderRadius);
@@ -72,6 +72,17 @@ ul {
   li {
     margin-top: 0.25em;
   }
+  &.twoColumns {
+    column-count: 2;
+    li {
+      margin-right: 1em;
+    }
+  }
+}
+h2 + ul,
+h3 + ul,
+ul + p {
+  margin-top: 1.5em;
 }
 
 p,
@@ -92,4 +103,10 @@ ul {
   justify-content: center;
   border-radius: 50%;
   margin-top: 2rem;
+}
+
+// introduction
+.introduction {
+  font-size: 1.25rem;
+  max-width: 80ch;
 }
