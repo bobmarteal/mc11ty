@@ -28,6 +28,9 @@
   }
   .quote__image {
     // padding: 2rem;
+    img {
+      max-width: 100%;
+    }
     @include mq(medium) {
       padding: 2rem 0 2rem 1em;
     }

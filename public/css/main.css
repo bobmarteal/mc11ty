@@ -90,7 +90,7 @@ main {
     -shows
 */
 img {
-  max-width: 100%;
+  width: clamp(10em, 40vw, 30em);
   border-radius: var(--borderRadius);
 }
 img.plain {
@@ -98,7 +98,6 @@ img.plain {
 }
 img.right {
   margin-left: 1rem;
-  max-width: 60%;
 }
 
 figure {
@@ -384,6 +383,9 @@ footer ul {
     font-size: 2.5rem;
   }
 }
+.hero img {
+  max-width: 100%;
+}
 
 /* 
     Name: _mainNav
@@ -611,6 +613,9 @@ ul {
   .quote {
     grid-template-columns: 300px 1fr;
   }
+}
+.quote .quote__image img {
+  max-width: 100%;
 }
 @media only screen and (min-width: 782px) {
   .quote .quote__image {
