@@ -29,15 +29,14 @@ footer {
     max-width: 100% !important;
     border-top: 1px solid var(--brandTwo);
     padding-top: 1rem;
-    li {
-      // margin: 0.5em 1em;
-    }
-    // @include mq(small) {
-    //   padding: 0 2em 4em;
-    //   flex-direction: row;
-    //   font-size: 0.75rem;
-    // }
   }
   a {
+  }
+  .ACN {
+    max-width: 148px;
+    grid-row: 2;
+    grid-column: 2;
+    justify-self: flex-end;
+    align-self: self-end;
   }
 }
