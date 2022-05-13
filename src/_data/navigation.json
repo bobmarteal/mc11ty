@@ -12,6 +12,10 @@
     "link": "/services/"
   },
   {
+    "name": "Process",
+    "link": "/process/"
+  },
+  {
     "name": "Contact",
     "link": "#contact-form",
     "class": "button button--cta"

@@ -90,7 +90,7 @@ main {
     -shows
 */
 img {
-  width: clamp(10em, 40vw, 30em);
+  width: clamp(20em, 40vw, 30em);
   border-radius: var(--borderRadius);
 }
 img.plain {
@@ -184,11 +184,13 @@ ul {
 ul li {
   margin-top: 0.25em;
 }
-ul.twoColumns {
-  column-count: 2;
-}
-ul.twoColumns li {
-  margin-right: 1em;
+@media only screen and (min-width: 782px) {
+  ul.twoColumns {
+    column-count: 2;
+  }
+  ul.twoColumns li {
+    margin-right: 1em;
+  }
 }
 
 h2 + ul,
@@ -326,10 +328,10 @@ Descr: any hiding or showin
 */
 footer {
   margin-top: 6rem;
-  display: grid;
 }
 @media only screen and (min-width: 782px) {
   footer {
+    display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto auto;
     gap: 2rem;
@@ -361,6 +363,11 @@ footer .ACN {
   grid-column: 2;
   justify-self: flex-end;
   align-self: self-end;
+}
+@media only screen and (min-width: 782px) {
+  footer .ACN {
+    margin-top: 2em;
+  }
 }
 
 /* 
@@ -613,21 +620,24 @@ ul {
   flex-direction: column-reverse;
   margin: 1rem 0;
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: auto 1fr;
   gap: 1em;
   align-items: center;
 }
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 782px) {
   .quote {
     grid-template-columns: 300px 1fr;
   }
 }
 .quote .quote__image img {
-  max-width: 100%;
+  max-width: 100px;
 }
 @media only screen and (min-width: 782px) {
   .quote .quote__image {
     padding: 2rem 0 2rem 1em;
+  }
+  .quote .quote__image img {
+    max-width: 100%;
   }
 }
 .quote blockquote {
@@ -847,7 +857,7 @@ https://flickity.metafizzy.co
 */
 .button {
   border-radius: var(--borderRadius);
-  padding: 0.5em 1em;
+  padding: 0.5em 0.5em;
   display: inline-block;
 }
 .button--cta {

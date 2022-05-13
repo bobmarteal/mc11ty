@@ -15,11 +15,11 @@
 
   // @include mq(medium) {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: auto 1fr;
   gap: 1em;
   align-items: center;
   // }
-  @include mq(header) {
+  @include mq(medium) {
     grid-template-columns: 300px 1fr;
     //   // gap: 1.5rem;
   }
@@ -29,9 +29,13 @@
   .quote__image {
     // padding: 2rem;
     img {
-      max-width: 100%;
+      max-width: 100px;
     }
     @include mq(medium) {
+      img {
+        max-width: 100%;
+      }
+
       padding: 2rem 0 2rem 1em;
     }
   }

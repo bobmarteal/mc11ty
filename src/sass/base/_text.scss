@@ -73,9 +73,11 @@ ul {
     margin-top: 0.25em;
   }
   &.twoColumns {
-    column-count: 2;
-    li {
-      margin-right: 1em;
+    @include mq(medium) {
+      column-count: 2;
+      li {
+        margin-right: 1em;
+      }
     }
   }
 }

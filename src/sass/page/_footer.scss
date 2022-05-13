@@ -4,8 +4,9 @@
 */
 footer {
   margin-top: 6rem;
-  display: grid;
+
   @include mq(medium) {
+    display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto auto;
     gap: 2rem;
@@ -38,5 +39,8 @@ footer {
     grid-column: 2;
     justify-self: flex-end;
     align-self: self-end;
+    @include mq(medium) {
+      margin-top: 2em;
+    }
   }
 }
