@@ -2,13 +2,15 @@
     Name: _utilities
     Descr: Styles for all the bits and bobs that go beyond each element
 */
+@include mq(medium) {
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+}
 
-.left {
-  float: left;
-}
-.right {
-  float: right;
-}
 .centered {
   margin-left: 50%;
   transform: translateX(-50%);

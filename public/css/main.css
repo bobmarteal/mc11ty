@@ -227,14 +227,15 @@ ul {
     Name: _utilities
     Descr: Styles for all the bits and bobs that go beyond each element
 */
-.left {
-  float: left;
-}
+@media only screen and (min-width: 782px) {
+  .left {
+    float: left;
+  }
 
-.right {
-  float: right;
+  .right {
+    float: right;
+  }
 }
-
 .centered {
   margin-left: 50%;
   transform: translateX(-50%);
