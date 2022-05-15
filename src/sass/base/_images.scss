@@ -7,7 +7,7 @@
 */
 
 img {
-  width: clamp(20em, 40vw, 30em);
+  width: clamp(15em, 40vw, 30em);
   border-radius: var(--borderRadius);
   // @include boxShadow();
   &.plain {
