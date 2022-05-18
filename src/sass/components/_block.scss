@@ -26,11 +26,13 @@
       background-repeat: no-repeat;
       width: 800px;
       height: 800px;
-      top: 0rem;
-      right: -50%;
+      top: 12rem;
+      right: -60%;
+      opacity: 0.2;
       @include mq(large) {
-        top: 3rem;
-        right: calc(-1 * (50% + -10rem));
+        top: 9rem;
+        right: calc(-1 * (50% + -20rem));
+        opacity: 0.6;
       }
       @include mq(xl) {
         right: -20%;

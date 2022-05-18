@@ -561,16 +561,18 @@ footer .ACN {
     background-repeat: no-repeat;
     width: 800px;
     height: 800px;
-    top: 0rem;
-    right: -50%;
+    top: 12rem;
+    right: -60%;
+    opacity: 0.2;
     border-radius: 50%;
     z-index: -1;
   }
 }
 @media only screen and (min-width: 782px) and (min-width: 1224px) {
   .block--circly::before {
-    top: 3rem;
-    right: calc(-1 * (50% - 10rem));
+    top: 9rem;
+    right: calc(-1 * (50% - 20rem));
+    opacity: 0.6;
   }
 }
 @media only screen and (min-width: 782px) and (min-width: 1432px) {
